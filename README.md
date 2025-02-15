@@ -8,7 +8,7 @@ This project consists of two Python applications (Producer and Consumer) that co
 ### Docker Setup:
 - **Dockerfile for Producer**: Builds an image to run the Producer application.
 - **Dockerfile for Consumer**: Builds an image to run the Consumer application.
-- **docker-compose.yml**: Configures and orchestrates the two containers, sets up a **bridge** network for communication, and defines a **Docker volume** to persist the `log.txt` file.
+- **docker-compose.yml**: Configures  the two containers, sets up a **bridge** network for communication, and defines a **Docker volume** for the `log.txt` file.
 
 
 When all files are ready, we use the command: docker-compose build
