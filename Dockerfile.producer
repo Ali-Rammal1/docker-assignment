@@ -1,0 +1,14 @@
+# Import the python image (after doing docker pull python)
+FROM python:3
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the producer file into the container
+COPY producer.py .
+
+#All libraries in the code are built in (no need to use pip install)
+
+# Command to run the producer when the container starts
+CMD ["python", "producer.py"]
+
