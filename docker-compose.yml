@@ -4,20 +4,20 @@ services:
   producer:
     build:
       context: .
-      dockerfile: Dockerfile.producer  # Reference the correct Dockerfile
+      dockerfile: Dockerfile.producer  # Reference the Dockerfile
     networks:
-      - my_network  # Attach to a custom network
+      - my_network  # connect to custom network: my_network
 
   consumer:
     build:
       context: .
-      dockerfile: Dockerfile.consumer  # Reference the correct Dockerfile
+      dockerfile: Dockerfile.consumer #reference the consumer dockerfile
     depends_on:
-      - producer  # Ensure the producer starts first
+      - producer  # make sure producer stars first
     networks:
       - my_network  # Connect to the same network
     volumes:
-      - data_volume:/data  # Persistent storage for received data
+      - data_volume:/data  # connect to a volume
 
 networks:
   my_network:  # Define a network to allow communication
@@ -25,5 +25,5 @@ networks:
     # Also, we do not care about the containers communicating with the host, so its better to have an isolated network
 
 volumes:
-  data_volume:  # Define a volume for persistent storage
+  data_volume:  # Define a volume for logging of the numbers
 

@@ -14,12 +14,14 @@ This project consists of two Python applications (Producer and Consumer) that co
 When all files are ready, we use the command: docker-compose build
 then docker-compose up
 
-to check the log files, we need to first access the shell of a container using:
+to check the log files, we need to first access the shell of the consumer container using:
 docker exec -it <consumer_container_id> sh 
-(we get the id from doing docker ps and get the id of the consumer container)
+
+To get the consumer container id, use the command docker ps.
+
 Then access the data folder and view the log.txt file:
-cd \data
-cat logs.txt
+cd \data #access data folder
+cat logs.txt #show the content of logs.txt
 
 This file is being updated every 5 seconds with a new number, which means that the 2 containers are successfully communicating using a bridge network.
 
